@@ -1,33 +1,25 @@
 <div class="container-fluid">
-  <h1>Bootcamp Enrollment Form</h1>
-  <form #userForm="ngForm">
+  <h1>Posts from API with HTTP Request</h1>
+  
+  <table class="tabledata" border="2">
+    <thead>
+      <tr>
+        <th>USER ID</th>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>DESCRIPTION</th>
+      </tr>
+    </thead>
+    
 
-    <div class="form-group">
-      <label>Employee Name</label>
-      <input type="text" required id="name" class="form-control" name="empname">
-    </div>
-
-    <div class="form-group">
-      <label>Employee Email</label>
-      <input type="text" name="emailid" class="form-control" ngModel required/>
-    </div>
-
-    <div class="form-group">
-      <label>Phone</label>
-      <input type="tel" name="phone" class="form-control" ngModel required/>
-    </div>
-
-    <div class="form-group">
-      <label>Address</label>
-      <input type="text" name="address" class="form-control" ngModel required/>
-    </div>
-
-    <div class="form-group">
-      <label>Date of Birth</label>
-      <input type="date" name="dob" class="form-control" ngModel required/>
-    </div>
-
-    <br>
-    <button class="btn btn-primary" type="submit">Submit Form</button> 
-  </form>
+    <tbody>
+      <tr *ngFor="let datapost of postData | paginate: {itemsPerPage: 10, currentPage: p};">
+        <td>{{datapost.userId}}</td>
+        <td>{{datapost.id}}</td>
+        <td>{{datapost.title}}</td>
+        <td>{{datapost.body}}</td>
+      </tr>
+    </tbody>
+  </table> 
+  <pagination-controls (pageChange) ="p = $event"></pagination-controls>
 </div>

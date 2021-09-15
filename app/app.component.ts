@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
-import { User } from './user';
+import { Component, OnInit } from '@angular/core';
+import { PostServiceService} from './post-service.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'formapp';
 
-  userModule = new User('Harry', 'harry@gmail.com',8899009900,'Bangalore','23/09/1996')
+export class AppComponent implements OnInit {
+  title = 'assignment1';
+
+  postData:any = [];
+  p: number = 1;
+
+  constructor(private post: PostServiceService){
+    
+    }
+    ngOnInit(): void {
+      this.post.getData().subscribe((data) => {
+        this.postData = data;
+    })
+  }
 }

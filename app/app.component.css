@@ -1,12 +1,23 @@
 .container-fluid
 {
-    width: 1000px;
+    width: 1200px;
+}
+h1{
+    text-align: center;
 }
 
-form{
-    margin-top: 40px;
+.tabledata th{
+    margin-left: 40px;
+    text-align: center;
 }
 
-.form-group{
-    margin-top: 20px;
+.tabledata td{
+    margin-top: 10px;
+    margin-left: 45px;
+    line-break:initial;
+}
+
+pagination-controls
+{
+    align-items: center;
 }
