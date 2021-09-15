@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <h1>Posts from API with HTTP Request</h1>
+  
+  <table class="tabledata" border="2">
+    <thead>
+      <tr>
+        <th>USER ID</th>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>DESCRIPTION</th>
+      </tr>
+    </thead>
+    
+
+    <tbody>
+      <tr *ngFor="let datapost of postData | paginate: {itemsPerPage: 10, currentPage: p};">
+        <td>{{datapost.userId}}</td>
+        <td>{{datapost.id}}</td>
+        <td>{{datapost.title}}</td>
+        <td>{{datapost.body}}</td>
+      </tr>
+    </tbody>
+  </table> 
+  <pagination-controls (pageChange) ="p = $event"></pagination-controls>
+</div>

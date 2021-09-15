@@ -1,0 +1,23 @@
+.container-fluid
+{
+    width: 1200px;
+}
+h1{
+    text-align: center;
+}
+
+.tabledata th{
+    margin-left: 40px;
+    text-align: center;
+}
+
+.tabledata td{
+    margin-top: 10px;
+    margin-left: 45px;
+    line-break:initial;
+}
+
+pagination-controls
+{
+    align-items: center;
+}
